@@ -1,0 +1,503 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D0CBF4CE1B789D44005E98CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CBF4CD1B789D44005E98CA /* AppDelegate.swift */; };
+		D0CBF4D11B789D44005E98CA /* SWCombox.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D0CBF4CF1B789D44005E98CA /* SWCombox.xcdatamodeld */; };
+		D0CBF4D31B789D44005E98CA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CBF4D21B789D44005E98CA /* ViewController.swift */; };
+		D0CBF4D61B789D44005E98CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0CBF4D41B789D44005E98CA /* Main.storyboard */; };
+		D0CBF4D81B789D44005E98CA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0CBF4D71B789D44005E98CA /* Images.xcassets */; };
+		D0CBF4DB1B789D44005E98CA /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0CBF4D91B789D44005E98CA /* LaunchScreen.xib */; };
+		D0CBF4E71B789D45005E98CA /* SWComboxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CBF4E61B789D45005E98CA /* SWComboxTests.swift */; };
+		D0CBF4F81B789F0C005E98CA /* SWComboxCountry.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CBF4F11B789F0C005E98CA /* SWComboxCountry.swift */; };
+		D0CBF4F91B789F0C005E98CA /* SWComboxCountry.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0CBF4F21B789F0C005E98CA /* SWComboxCountry.xib */; };
+		D0CBF4FA1B789F0C005E98CA /* SWComboxHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CBF4F31B789F0C005E98CA /* SWComboxHelper.swift */; };
+		D0CBF4FB1B789F0C005E98CA /* SWComboxTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CBF4F41B789F0C005E98CA /* SWComboxTitle.swift */; };
+		D0CBF4FC1B789F0C005E98CA /* SWComboxTitle.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0CBF4F51B789F0C005E98CA /* SWComboxTitle.xib */; };
+		D0CBF4FD1B789F0C005E98CA /* SWComboxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CBF4F61B789F0C005E98CA /* SWComboxView.swift */; };
+		D0CBF4FE1B789F0C005E98CA /* SWComboxView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0CBF4F71B789F0C005E98CA /* SWComboxView.xib */; };
+		D0CBF5011B789FC5005E98CA /* UIViewEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CBF5001B789FC5005E98CA /* UIViewEx.swift */; };
+		D0CBF5051B78AB84005E98CA /* square-CN.png in Resources */ = {isa = PBXBuildFile; fileRef = D0CBF5021B78AB84005E98CA /* square-CN.png */; };
+		D0CBF5061B78AB84005E98CA /* square-JP.png in Resources */ = {isa = PBXBuildFile; fileRef = D0CBF5031B78AB84005E98CA /* square-JP.png */; };
+		D0CBF5071B78AB84005E98CA /* square-US.png in Resources */ = {isa = PBXBuildFile; fileRef = D0CBF5041B78AB84005E98CA /* square-US.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D0CBF4E11B789D45005E98CA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D0CBF4C01B789D44005E98CA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D0CBF4C71B789D44005E98CA;
+			remoteInfo = SWCombox;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D0CBF4C81B789D44005E98CA /* SWCombox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SWCombox.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0CBF4CC1B789D44005E98CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D0CBF4CD1B789D44005E98CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D0CBF4D01B789D44005E98CA /* SWCombox.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SWCombox.xcdatamodel; sourceTree = "<group>"; };
+		D0CBF4D21B789D44005E98CA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D0CBF4D51B789D44005E98CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D0CBF4D71B789D44005E98CA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		D0CBF4DA1B789D44005E98CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		D0CBF4E01B789D45005E98CA /* SWComboxTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SWComboxTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0CBF4E51B789D45005E98CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D0CBF4E61B789D45005E98CA /* SWComboxTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWComboxTests.swift; sourceTree = "<group>"; };
+		D0CBF4F11B789F0C005E98CA /* SWComboxCountry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SWComboxCountry.swift; path = Combox/SWComboxCountry.swift; sourceTree = "<group>"; };
+		D0CBF4F21B789F0C005E98CA /* SWComboxCountry.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SWComboxCountry.xib; path = Combox/SWComboxCountry.xib; sourceTree = "<group>"; };
+		D0CBF4F31B789F0C005E98CA /* SWComboxHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SWComboxHelper.swift; path = Combox/SWComboxHelper.swift; sourceTree = "<group>"; };
+		D0CBF4F41B789F0C005E98CA /* SWComboxTitle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SWComboxTitle.swift; path = Combox/SWComboxTitle.swift; sourceTree = "<group>"; };
+		D0CBF4F51B789F0C005E98CA /* SWComboxTitle.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SWComboxTitle.xib; path = Combox/SWComboxTitle.xib; sourceTree = "<group>"; };
+		D0CBF4F61B789F0C005E98CA /* SWComboxView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SWComboxView.swift; path = Combox/SWComboxView.swift; sourceTree = "<group>"; };
+		D0CBF4F71B789F0C005E98CA /* SWComboxView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SWComboxView.xib; path = Combox/SWComboxView.xib; sourceTree = "<group>"; };
+		D0CBF5001B789FC5005E98CA /* UIViewEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIViewEx.swift; path = Combox/UIViewEx.swift; sourceTree = "<group>"; };
+		D0CBF5021B78AB84005E98CA /* square-CN.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "square-CN.png"; sourceTree = "<group>"; };
+		D0CBF5031B78AB84005E98CA /* square-JP.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "square-JP.png"; sourceTree = "<group>"; };
+		D0CBF5041B78AB84005E98CA /* square-US.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "square-US.png"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D0CBF4C51B789D44005E98CA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D0CBF4DD1B789D45005E98CA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D0CBF4BF1B789D44005E98CA = {
+			isa = PBXGroup;
+			children = (
+				D0CBF4CA1B789D44005E98CA /* SWCombox */,
+				D0CBF4E31B789D45005E98CA /* SWComboxTests */,
+				D0CBF4C91B789D44005E98CA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D0CBF4C91B789D44005E98CA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D0CBF4C81B789D44005E98CA /* SWCombox.app */,
+				D0CBF4E01B789D45005E98CA /* SWComboxTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D0CBF4CA1B789D44005E98CA /* SWCombox */ = {
+			isa = PBXGroup;
+			children = (
+				D0CBF4F01B789D56005E98CA /* Combox */,
+				D0CBF4CD1B789D44005E98CA /* AppDelegate.swift */,
+				D0CBF4D21B789D44005E98CA /* ViewController.swift */,
+				D0CBF4D41B789D44005E98CA /* Main.storyboard */,
+				D0CBF4D71B789D44005E98CA /* Images.xcassets */,
+				D0CBF4D91B789D44005E98CA /* LaunchScreen.xib */,
+				D0CBF4CF1B789D44005E98CA /* SWCombox.xcdatamodeld */,
+				D0CBF5021B78AB84005E98CA /* square-CN.png */,
+				D0CBF5031B78AB84005E98CA /* square-JP.png */,
+				D0CBF5041B78AB84005E98CA /* square-US.png */,
+				D0CBF4CB1B789D44005E98CA /* Supporting Files */,
+			);
+			path = SWCombox;
+			sourceTree = "<group>";
+		};
+		D0CBF4CB1B789D44005E98CA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D0CBF4CC1B789D44005E98CA /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D0CBF4E31B789D45005E98CA /* SWComboxTests */ = {
+			isa = PBXGroup;
+			children = (
+				D0CBF4E61B789D45005E98CA /* SWComboxTests.swift */,
+				D0CBF4E41B789D45005E98CA /* Supporting Files */,
+			);
+			path = SWComboxTests;
+			sourceTree = "<group>";
+		};
+		D0CBF4E41B789D45005E98CA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D0CBF4E51B789D45005E98CA /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D0CBF4F01B789D56005E98CA /* Combox */ = {
+			isa = PBXGroup;
+			children = (
+				D0CBF4F31B789F0C005E98CA /* SWComboxHelper.swift */,
+				D0CBF4F61B789F0C005E98CA /* SWComboxView.swift */,
+				D0CBF4F71B789F0C005E98CA /* SWComboxView.xib */,
+				D0CBF4FF1B789F13005E98CA /* View */,
+			);
+			name = Combox;
+			sourceTree = "<group>";
+		};
+		D0CBF4FF1B789F13005E98CA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D0CBF5001B789FC5005E98CA /* UIViewEx.swift */,
+				D0CBF4F41B789F0C005E98CA /* SWComboxTitle.swift */,
+				D0CBF4F51B789F0C005E98CA /* SWComboxTitle.xib */,
+				D0CBF4F11B789F0C005E98CA /* SWComboxCountry.swift */,
+				D0CBF4F21B789F0C005E98CA /* SWComboxCountry.xib */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D0CBF4C71B789D44005E98CA /* SWCombox */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D0CBF4EA1B789D45005E98CA /* Build configuration list for PBXNativeTarget "SWCombox" */;
+			buildPhases = (
+				D0CBF4C41B789D44005E98CA /* Sources */,
+				D0CBF4C51B789D44005E98CA /* Frameworks */,
+				D0CBF4C61B789D44005E98CA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SWCombox;
+			productName = SWCombox;
+			productReference = D0CBF4C81B789D44005E98CA /* SWCombox.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D0CBF4DF1B789D45005E98CA /* SWComboxTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D0CBF4ED1B789D45005E98CA /* Build configuration list for PBXNativeTarget "SWComboxTests" */;
+			buildPhases = (
+				D0CBF4DC1B789D45005E98CA /* Sources */,
+				D0CBF4DD1B789D45005E98CA /* Frameworks */,
+				D0CBF4DE1B789D45005E98CA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D0CBF4E21B789D45005E98CA /* PBXTargetDependency */,
+			);
+			name = SWComboxTests;
+			productName = SWComboxTests;
+			productReference = D0CBF4E01B789D45005E98CA /* SWComboxTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D0CBF4C01B789D44005E98CA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0640;
+				ORGANIZATIONNAME = "shou wei";
+				TargetAttributes = {
+					D0CBF4C71B789D44005E98CA = {
+						CreatedOnToolsVersion = 6.4;
+					};
+					D0CBF4DF1B789D45005E98CA = {
+						CreatedOnToolsVersion = 6.4;
+						TestTargetID = D0CBF4C71B789D44005E98CA;
+					};
+				};
+			};
+			buildConfigurationList = D0CBF4C31B789D44005E98CA /* Build configuration list for PBXProject "SWCombox" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D0CBF4BF1B789D44005E98CA;
+			productRefGroup = D0CBF4C91B789D44005E98CA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D0CBF4C71B789D44005E98CA /* SWCombox */,
+				D0CBF4DF1B789D45005E98CA /* SWComboxTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D0CBF4C61B789D44005E98CA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D0CBF5061B78AB84005E98CA /* square-JP.png in Resources */,
+				D0CBF4FE1B789F0C005E98CA /* SWComboxView.xib in Resources */,
+				D0CBF4D61B789D44005E98CA /* Main.storyboard in Resources */,
+				D0CBF4DB1B789D44005E98CA /* LaunchScreen.xib in Resources */,
+				D0CBF5071B78AB84005E98CA /* square-US.png in Resources */,
+				D0CBF4F91B789F0C005E98CA /* SWComboxCountry.xib in Resources */,
+				D0CBF4D81B789D44005E98CA /* Images.xcassets in Resources */,
+				D0CBF4FC1B789F0C005E98CA /* SWComboxTitle.xib in Resources */,
+				D0CBF5051B78AB84005E98CA /* square-CN.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D0CBF4DE1B789D45005E98CA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D0CBF4C41B789D44005E98CA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D0CBF4FA1B789F0C005E98CA /* SWComboxHelper.swift in Sources */,
+				D0CBF4FD1B789F0C005E98CA /* SWComboxView.swift in Sources */,
+				D0CBF4D31B789D44005E98CA /* ViewController.swift in Sources */,
+				D0CBF4CE1B789D44005E98CA /* AppDelegate.swift in Sources */,
+				D0CBF4F81B789F0C005E98CA /* SWComboxCountry.swift in Sources */,
+				D0CBF4FB1B789F0C005E98CA /* SWComboxTitle.swift in Sources */,
+				D0CBF4D11B789D44005E98CA /* SWCombox.xcdatamodeld in Sources */,
+				D0CBF5011B789FC5005E98CA /* UIViewEx.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D0CBF4DC1B789D45005E98CA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D0CBF4E71B789D45005E98CA /* SWComboxTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D0CBF4E21B789D45005E98CA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D0CBF4C71B789D44005E98CA /* SWCombox */;
+			targetProxy = D0CBF4E11B789D45005E98CA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D0CBF4D41B789D44005E98CA /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D0CBF4D51B789D44005E98CA /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D0CBF4D91B789D44005E98CA /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D0CBF4DA1B789D44005E98CA /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D0CBF4E81B789D45005E98CA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D0CBF4E91B789D45005E98CA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D0CBF4EB1B789D45005E98CA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = SWCombox/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		D0CBF4EC1B789D45005E98CA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = SWCombox/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		D0CBF4EE1B789D45005E98CA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = SWComboxTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SWCombox.app/SWCombox";
+			};
+			name = Debug;
+		};
+		D0CBF4EF1B789D45005E98CA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = SWComboxTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SWCombox.app/SWCombox";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D0CBF4C31B789D44005E98CA /* Build configuration list for PBXProject "SWCombox" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D0CBF4E81B789D45005E98CA /* Debug */,
+				D0CBF4E91B789D45005E98CA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D0CBF4EA1B789D45005E98CA /* Build configuration list for PBXNativeTarget "SWCombox" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D0CBF4EB1B789D45005E98CA /* Debug */,
+				D0CBF4EC1B789D45005E98CA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		D0CBF4ED1B789D45005E98CA /* Build configuration list for PBXNativeTarget "SWComboxTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D0CBF4EE1B789D45005E98CA /* Debug */,
+				D0CBF4EF1B789D45005E98CA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		D0CBF4CF1B789D44005E98CA /* SWCombox.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				D0CBF4D01B789D44005E98CA /* SWCombox.xcdatamodel */,
+			);
+			currentVersion = D0CBF4D01B789D44005E98CA /* SWCombox.xcdatamodel */;
+			path = SWCombox.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = D0CBF4C01B789D44005E98CA /* Project object */;
+}
