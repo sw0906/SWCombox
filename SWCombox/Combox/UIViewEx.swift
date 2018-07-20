@@ -3,11 +3,12 @@ import UIKit
 extension UIView {
     static func loadInstanceFromNib<T:UIView>() -> T? {
         var className = T.description()
-        className = split(className) {
+        className = split(className)
+        {
             $0 == "."
             }[1]
         let nib = UINib(nibName: className, bundle: nil)
-        let topLevelObjects = nib.instantiateWithOwner(self, options: nil)
+        let topLevelObjects = nib.instantiate(withOwner:self, options: nil)
         
         return topLevelObjects.filter {
             $0 is T
@@ -16,7 +17,7 @@ extension UIView {
     
     static func loadInstanceFromNibNamed<T:UIView>(nibNamed: String) -> T? {
         let nib = UINib(nibName: nibNamed, bundle: nil)
-        let topLevelObjects = nib.instantiateWithOwner(self, options: nil)
+        let topLevelObjects = nib.instantiate(withOwner:self, options: nil)
         
         return topLevelObjects.filter {
             $0 is T
@@ -26,16 +27,16 @@ extension UIView {
     //to containner
     static func loadInstanceFromNibNamedToContainner<T:UIView>(nibNamed: String, container: UIView)
         -> T? {
-            var instance: T? = self.loadInstanceFromNibNamed(nibNamed)
+            let instance: T? = self.loadInstanceFromNibNamed(nibNamed: nibNamed)
             container.addSubview(instance!)
             instance?.frame = container.bounds
             return instance
     }
     
-    static func loadInstanceFromNibNamedToContainner<T:UIView>(container: UIView)
+    static func loadInstanceFromNibNamedToContainner<T:UIView>(_ container: UIView)
         -> T? {
-            var instance: T? = self.loadInstanceFromNib()
-            var frame = container.bounds
+            let instance: T? = self.loadInstanceFromNib()
+            let frame = container.bounds
             instance?.frame = frame
             container.addSubview(instance!)
             return instance
@@ -43,13 +44,13 @@ extension UIView {
     
     static func loadInstanceFromNibNamedToSrollContainner<T:UIView>(scrollView: UIScrollView)
         -> T? {
-            var instance: T? = self.loadInstanceFromNib()
+            let instance: T? = self.loadInstanceFromNib()
             scrollView.addSubview(instance!)
-            var width = scrollView.bounds.width
+            let width = scrollView.bounds.width
             var frame = instance!.frame
-            var ratio = CGFloat(frame.width) / CGFloat(frame.height)
-            var screenWidth = UIScreen.mainScreen().bounds.size.width
-            frame.size = CGSizeMake(width, width / ratio)
+            let ratio = CGFloat(frame.width) / CGFloat(frame.height)
+//            var screenWidth = UIScreen.mainScreen.bounds.size.width
+            frame.size = CGSize(width: width, height: width / ratio)//CGSizeMake(width, width / ratio)
             instance!.frame = frame
             instance!.setNeedsUpdateConstraints()
             instance!.setNeedsLayout()
@@ -113,23 +114,22 @@ extension UIView {
         }
     }
     
-    
     func removeAllSubviews() {
-        for view in (self.subviews as! [UIView]) {
+        for view in self.subviews {
             view.removeFromSuperview()
         }
     }
     
     class func rasterizeView(view: UIView) -> UIImage {
-        UIGraphicsBeginImageContextWithOptions(view.frame.size, true, UIScreen.mainScreen().scale)
-        view.layer.renderInContext(UIGraphicsGetCurrentContext())
+        UIGraphicsBeginImageContextWithOptions(view.frame.size, true, UIScreen.main.scale)
+        view.layer.render(in: UIGraphicsGetCurrentContext()!)
         let viewImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
-        return viewImage
+        return viewImage!
     }
     
     func isSubviewOf(view: UIView) -> Bool {
-        for v in view.subviews as! [UIView] {
+        for v in view.subviews {
             if v === self {
                 return true
             }
@@ -137,25 +137,26 @@ extension UIView {
         return false
     }
     
-    class func animateWithDuration(duration: NSTimeInterval, options: UIViewAnimationOptions, animations: () -> ()) {
-        self.animateWithDuration(duration, delay: 0, options: options, animations: animations, completion: nil)
+    class func animateWithDuration(duration: TimeInterval, options: UIViewAnimationOptions, animations: () -> ()) {
+        self.animateWithDuration(duration: duration, options: options, animations: animations)
     }
     
     class func roundView(view: UIView, onCorner rectCorner: UIRectCorner, radius: CGFloat) {
-        let maskPath = UIBezierPath(roundedRect: view.bounds, byRoundingCorners: rectCorner, cornerRadii: CGSizeMake(radius, radius))
-        var maskLayer = CAShapeLayer()
+        let size = CGSize(width: radius, height: radius)
+        let maskPath = UIBezierPath(roundedRect: view.bounds, byRoundingCorners: rectCorner, cornerRadii: size)
+        let maskLayer = CAShapeLayer()
         maskLayer.frame = view.bounds
-        maskLayer.path = maskPath.CGPath
+        maskLayer.path = maskPath.cgPath
         view.layer.mask = maskLayer
     }
     
     func hideWithAnimation(hide: Bool) {
         
-        UIView.animateWithDuration(0.5, delay: 0, options: .CurveEaseOut, animations: {
+        UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseOut, animations: {
             [unowned self] in
             if hide {
                 self.alpha = 0
-                self.hidden = false
+                self.isHidden = false
                 self.alpha = 1
             } else {
                 self.alpha = 0
@@ -163,7 +164,7 @@ extension UIView {
             }) {
                 complete in
                 if !hide {
-                    self.hidden = true
+                    self.isHidden = true
                 }
         }
     }
@@ -173,7 +174,7 @@ extension UIView {
     //MARK: add frame
     func addFrame() {
         layer.borderWidth = 1;
-        self.layer.borderColor = UIColor.lightGrayColor().CGColor
+        self.layer.borderColor = UIColor.lightGray.cgColor
     }
     
     
@@ -184,10 +185,10 @@ extension UIView {
         frameLine.origin.y = frame.size.height - 0.5
         frameLine.origin.x = 12
         frameLine.size.width -= 24
-        var line = UIView(frame: frameLine)
+        let line = UIView(frame: frameLine)
         line.backgroundColor = color
         addSubview(line)
-        bringSubviewToFront(line)
+        bringSubview(toFront: line)
     }
     
     
@@ -197,7 +198,7 @@ extension UIView {
         frameLine.origin.y = frame.size.height - 0.5
         frameLine.origin.x = margin
         frameLine.size.width -= margin * 2
-        var line = UIView(frame: frameLine)
+        let line = UIView(frame: frameLine)
         line.backgroundColor = color
         addSubview(line)
     }
@@ -208,7 +209,7 @@ extension UIView {
         frameLine.origin.y = frame.size.height - 0.5 - marginBottom
         frameLine.origin.x = marginLeft
         frameLine.size.width -= (marginLeft + marginRight)
-        var line = UIView(frame: frameLine)
+        let line = UIView(frame: frameLine)
         line.backgroundColor = color
         addSubview(line)
     }

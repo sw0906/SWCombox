@@ -23,7 +23,7 @@ class SWComboxCountry: UIView {
     func bindCountry(country: SWCountry)
     {
         //bindImage(image: image, title: country.name)
-        bindImage(country.image, title: country.name)
+        bindImage(image: country.image, title: country.name)
     }
     
     func bindImage(image:UIImage, title: String)

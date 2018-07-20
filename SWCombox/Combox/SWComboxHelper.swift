@@ -39,12 +39,12 @@ class SWComboxTitleHelper: SWComboxCommonHelper {
     func getCurrentCell(tableView: UITableView, data: AnyObject) -> UITableViewCell {
         var cellFrame = comboxView.frame
         cellFrame.size.width = tableView.frame.size.width
-        
-        var cell = UITableViewCell()
+
+        let cell = UITableViewCell()
         cell.frame = cellFrame
         
         var comboxV : SWComboxTitle
-        comboxV = UIView.loadInstanceFromNibNamedToContainner(cell)!
+        comboxV = UIView.loadInstanceFromNibNamedToContainner(cell)! as! SWComboxTitle
         comboxV.bindTitle(data)
         return cell
     }
@@ -62,23 +62,23 @@ class SWComboxCountryHelper: SWComboxCommonHelper {
     func loadCurrentView(contentView:UIView, data: AnyObject)
     {
         comboxView = UIView.loadInstanceFromNibNamedToContainner(contentView)
-        comboxView.bindCountry(data as! SWCountry)
+        comboxView.bindCountry(country: data as! SWCountry)
     }
     
     func setCurrentView(data: AnyObject){
-        comboxView.bindCountry(data as! SWCountry)
+        comboxView.bindCountry(country: data as! SWCountry)
     }
     
     func getCurrentCell(tableView: UITableView, data: AnyObject) -> UITableViewCell {
         var cellFrame = comboxView.frame
         cellFrame.size.width = tableView.frame.size.width
         
-        var cell = UITableViewCell()
+        let cell = UITableViewCell()
         cell.frame = cellFrame
         
         var comboxV : SWComboxCountry
-        comboxV = UIView.loadInstanceFromNibNamedToContainner(cell)!
-        comboxV.bindCountry(data as! SWCountry)
+        comboxV = UIView.loadInstanceFromNibNamedToContainner(cell)! as! SWComboxCountry
+        comboxV.bindCountry(country: data as! SWCountry)
         return cell
     }
     

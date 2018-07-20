@@ -12,7 +12,7 @@ class SWComboxTitle: UIView {
 
     @IBOutlet weak var name: UILabel!
 
-    func bindTitle(title: AnyObject)
+    func bindTitle(_ title: AnyObject)
     {
         name.text = title as? String
     }
