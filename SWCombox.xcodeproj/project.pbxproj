@@ -105,14 +105,6 @@
 			children = (
 				D0FD49C321032EAF00277591 /* SWComboxView.swift */,
 				D0FD49C421032EAF00277591 /* SWComboxView.xib */,
-				D0FD49C521032EAF00277591 /* View */,
-			);
-			path = SWComboxLib;
-			sourceTree = "<group>";
-		};
-		D0FD49C521032EAF00277591 /* View */ = {
-			isa = PBXGroup;
-			children = (
 				D0FD49CB21032EAF00277591 /* SWComboxImageSelection.swift */,
 				D0FD49CC21032EAF00277591 /* SWComboxImageSelection.xib */,
 				D0FD49C621032EAF00277591 /* SWComboxTextSelection.xib */,
@@ -121,7 +113,7 @@
 				D0FD49C921032EAF00277591 /* NibView.swift */,
 				D0FD49CA21032EAF00277591 /* icn-dropdown.pdf */,
 			);
-			path = View;
+			path = SWComboxLib;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
