@@ -4,13 +4,12 @@ simple and clean combo box --  update to swift 4.0
 ## Sample Code
 ```swift
 // Set up ComboBoxView
-
 func setupComboBox() {
      let comboBox = SWComboxView()
      comboBox.bindData(comboxDelegate: self)
 }
     
-
+// SWComboxViewDelegate
 extension ViewController : SWComboxViewDelegate {
 
     func swComboBoxSelections(combox: SWComboxView) -> [Any] {
