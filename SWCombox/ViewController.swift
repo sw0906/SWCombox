@@ -28,7 +28,6 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    
     func setupCombox() {
         containner1.bindData(comboxDelegate: self)
         containner2.bindData(comboxDelegate: self)
