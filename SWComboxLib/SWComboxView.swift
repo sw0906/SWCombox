@@ -21,7 +21,7 @@ open class SWComboxView: NibView {
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var button: UIButton!
 
-    private var comboBox: SWComboxSelectionView!
+    var comboBox: SWComboxSelectionView!
 
     public weak var delegate: SWComboxViewDelegate!
     public var tableView:UITableView!
@@ -30,7 +30,7 @@ open class SWComboxView: NibView {
         return delegate.comboBoxSeletionItems(combox: self)
     }
 
-    public var defaultIndex = 0
+    public var defaultIndex: Int = 0
 
     public var isOpen = false
 
@@ -65,7 +65,7 @@ open class SWComboxView: NibView {
 extension SWComboxView {
 
     open func bindData(comboxDelegate:SWComboxViewDelegate, seletedIndex: Int) {
-        defaultIndex = seletedIndex
+        self.defaultIndex = seletedIndex
         delegate = comboxDelegate
         comboBox = delegate.comboxSeletionView(combox: self)
         setupContentView()
@@ -79,7 +79,7 @@ extension SWComboxView {
 
 extension SWComboxView: UITableViewDataSource, UITableViewDelegate {
 
-    private func setupTable() {
+    func setupTable() {
         if tableView == nil
         {
             let rect = getTableOriginFrame()
@@ -97,31 +97,29 @@ extension SWComboxView: UITableViewDataSource, UITableViewDelegate {
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return list.count
     }
-    
+
     public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return self.frame.size.height
     }
-    
+
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = getCurrentCell(tableView: self.tableView, data: list[indexPath.row] as AnyObject)
         cell.addBottomLine(margin: 0, color: UIColor.lightGray)
         return cell
     }
-    
+
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         defaultIndex = indexPath.row
         dismissCombox()
     }
 
     //MARK: reload
-    private func reloadData()
-    {
+    func reloadData() {
         tableView.reloadData()
-        
+
     }
-    
-    private func reloadViewWithIndex(_ index: Int)
-    {
+
+    func reloadViewWithIndex(_ index: Int) {
         defaultIndex = index
         let object: AnyObject = list[defaultIndex] as AnyObject
         self.setCurrentView(data: object)
@@ -134,16 +132,16 @@ extension SWComboxView {
         return comboBox?.title ?? ""
     }
 
-    private func loadCurrentView(contentView:UIView, data: AnyObject) {
+    func loadCurrentView(contentView:UIView, data: AnyObject) {
         contentView.addSubviewToMaxmiumSize(view: comboBox)
         comboBox.bind(data)
     }
 
-    private func setCurrentView(data: AnyObject){
+    func setCurrentView(data: AnyObject){
         comboBox.bind(data)
     }
 
-    private func getCurrentCell(tableView: UITableView, data: AnyObject) -> UITableViewCell {
+    func getCurrentCell(tableView: UITableView, data: AnyObject) -> UITableViewCell {
         let identifier = "comboBox"
         guard let comboBox = comboBox else { return UITableViewCell() }
         var cellFrame = comboBox.frame
@@ -158,7 +156,7 @@ extension SWComboxView {
         return cell
     }
 
-    private func setupContentView() {
+    func setupContentView() {
         if defaultIndex < list.count {
             self.loadCurrentView(contentView: contentView, data: list[defaultIndex] as AnyObject)
         } else {
@@ -170,23 +168,23 @@ extension SWComboxView {
 }
 
 extension SWComboxView {
-    
+
     //MARK: Tap Action
-    private func tapTheCombox() {
+    func tapTheCombox() {
         setupTable()
         onAndOffSelection()
 
         self.delegate.openCombox(isOpen: !self.isOpen, combox: self)
     }
 
-    
+
     //MARK: helper
-    private func dismissCombox() {
+    func dismissCombox() {
         reloadViewWithIndex(defaultIndex)
         tapTheCombox()
         delegate.selectComboxAtIndex(index: defaultIndex, object: list[defaultIndex], combox: self)
     }
-    
+
 
     public func onAndOffSelection() {
         if self.isOpen {
@@ -220,18 +218,16 @@ extension SWComboxView {
 }
 
 extension SWComboxView {
-    
+
     //table frame
-    private func getTableOriginFrame() -> CGRect
-    {
+    func getTableOriginFrame() -> CGRect {
         let orginY = self.frame.size.height
         let orginX:CGFloat = 0
         let ori = CGRect(x:orginX, y:orginY, width:self.frame.size.width, height: 0)
         return ori
     }
-    
-    private func getTableFrame() -> CGRect
-    {
+
+    func getTableFrame() -> CGRect {
         var frame  = tableView.frame
         let countNumber = self.list.count > 4 ? 4.5 : CGFloat(self.list.count)
         frame.size.height = self.contentView.frame.height * countNumber
@@ -243,3 +239,4 @@ extension SWComboxView {
     }
 
 }
+
