@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "SWCombox"
-  s.version      = "1.5"
+  s.version      = "2.0"
   s.summary      = "Simple Combo Box"
   s.description  = "Simple Combo Box - text / image & text"
   s.homepage     = "https://github.com/sw0906/SWCombox.git"
@@ -12,6 +12,6 @@ Pod::Spec.new do |s|
 
   s.license      = { :type => "MIT", :file => "LICENSE" }
   s.author             = { "Shou Wei" => "sw0906@gmail.com" }
-  s.source       = { :git => "https://github.com/sw0906/CoordinateAxis.git", :tag => s.version }
-  s.source_files  = "CoordinateAxisLib/*"
+  s.source       = { :git => "https://github.com/sw0906/SWCombox.git", :tag => s.version }
+  s.source_files  = "SWComboxLib/*"
 end
