@@ -12,20 +12,20 @@ func setupComboBox() {
 // SWComboxViewDelegate
 extension ViewController : SWComboxViewDelegate {
 
-    func swComboBoxSelections(combox: SWComboxView) -> [Any] {
+    func comboBoxSeletionItems(combox: SWComboxView) -> [Any] {
         return ["good", "middle", "bad"]
     }
 
 
-    func swComboBox(combox: SWComboxView) -> SWComboBox {
+    func comboxSeletionView(combox: SWComboxView) -> SWComboxSelectionView {
         return SWComboxTextSelection()
     }
 
-    func selectedAtIndex(index:Int, object: Any, combox withCombox: SWComboxView) { }
+    func selectComboxAtIndex(index:Int, object: Any, combox withCombox: SWComboxView) { }
 
-    func tapComboBox(isOpen: Bool, combox: SWComboxView) {}
+    func openCombox(isOpen: Bool, combox: SWComboxView) {}
 
-    func configureComboBoxCell(combox: SWComboxView, cell: inout UITableViewCell) {}
+    func configureComboxCell(combox: SWComboxView, cell: inout UITableViewCell) {}
 }
 
 ```
