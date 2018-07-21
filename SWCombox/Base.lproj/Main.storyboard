@@ -23,7 +23,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Combox With Icon" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kwh-SY-quV">
-                                <rect key="frame" x="16" y="448" width="247" height="20.5"/>
+                                <rect key="frame" x="16" y="388" width="247" height="20.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="247" id="E91-vh-KNs"/>
                                 </constraints>
@@ -39,10 +39,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ioy-FR-ldB" customClass="SWComboxView" customModule="SWCombox" customModuleProvider="target">
-                                <rect key="frame" x="16" y="468.5" width="329" height="44"/>
+                                <rect key="frame" x="16" y="408.5" width="329" height="55"/>
                                 <color key="backgroundColor" red="0.51829146290000006" green="0.95183397690000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="eWy-YJ-tfT"/>
+                                    <constraint firstAttribute="height" constant="55" id="eWy-YJ-tfT"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Combox Normal" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k2h-6X-sdA">
@@ -60,7 +60,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="k2h-6X-sdA" secondAttribute="trailing" constant="96" id="0pP-AV-Vhh"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Ioy-FR-ldB" secondAttribute="trailing" constant="14" id="5bm-3h-bdM"/>
                             <constraint firstItem="Ioy-FR-ldB" firstAttribute="top" secondItem="Kwh-SY-quV" secondAttribute="bottom" id="8kX-Uq-le3"/>
-                            <constraint firstItem="Kwh-SY-quV" firstAttribute="top" secondItem="lhM-6S-gPd" secondAttribute="bottom" constant="300" id="K5n-WB-Bgv"/>
+                            <constraint firstItem="Kwh-SY-quV" firstAttribute="top" secondItem="lhM-6S-gPd" secondAttribute="bottom" constant="240" id="K5n-WB-Bgv"/>
                             <constraint firstItem="lhM-6S-gPd" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="84" id="MEF-Nm-mmo"/>
                             <constraint firstItem="Ioy-FR-ldB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="TXb-yn-UD7"/>
                             <constraint firstItem="k2h-6X-sdA" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Xbh-i8-bO7"/>

@@ -35,7 +35,7 @@ class ViewController: UIViewController {
 
 }
 
-extension ViewController :SWComboxViewDelegate {
+extension ViewController : SWComboxViewDelegate {
 
     func swComboBoxSelections(combox: SWComboxView) -> [Any] {
         if combox == containner1 {
@@ -69,8 +69,8 @@ extension ViewController :SWComboxViewDelegate {
 
 
     //MARK: delegate
-    func selectedAtIndex(index:Int, combox withCombox: SWComboxView) {
-
+    func selectedAtIndex(index:Int, object: Any, combox withCombox: SWComboxView) {
+        print("index - \(index) selected - \(object)")
     }
 
     func tapComboBox(isOpen: Bool, combox: SWComboxView) {
@@ -85,5 +85,11 @@ extension ViewController :SWComboxViewDelegate {
         }
     }
 
+    func configureComboBoxCell(combox: SWComboxView, cell: inout UITableViewCell) {
+        if combox == containner1 {
+            cell.selectionStyle = .none
+            cell.backgroundColor = UIColor.gray.withAlphaComponent(0.1)
+        }
+    }
 }
 

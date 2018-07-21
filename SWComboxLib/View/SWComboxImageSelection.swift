@@ -30,6 +30,8 @@ open class SWComboxImageSelection: SWComboBox {
         let nibType = SWComboxCountryNibResourceType()
         _ = nibType.firstView(owner: self)
         addSubviewToMaxmiumSize(view: self.container)
+        self.backgroundColor = UIColor.clear
+        self.container.backgroundColor = UIColor.clear
     }
 
     override open var title : String {

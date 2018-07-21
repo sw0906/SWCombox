@@ -1,8 +1,10 @@
 import UIKit
 
-@objc public protocol SWComboxViewDelegate {
-    @objc optional func selectedAtIndex(index:Int, combox: SWComboxView)
-    @objc optional func tapComboBox(isOpen: Bool, combox: SWComboxView)
+public protocol SWComboxViewDelegate: class {
+    func selectedAtIndex(index:Int, object: Any, combox: SWComboxView)
+    func tapComboBox(isOpen: Bool, combox: SWComboxView)
+    func configureComboBoxCell(combox: SWComboxView, cell: inout UITableViewCell)
+
     func swComboBox(combox: SWComboxView) -> SWComboBox
     func swComboBoxSelections(combox: SWComboxView) -> [Any]
 }
@@ -12,19 +14,16 @@ struct SWComboxViewNibResourceType: NibResourceType {
     let name = "SWComboxView"
 }
 
-open class SWComboxView: NibView, UITableViewDataSource, UITableViewDelegate {
+open class SWComboxView: NibView {
 
     @IBOutlet var container: UIView!
     @IBOutlet weak var arrow: UIImageView!
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var button: UIButton!
 
-    public var comboBox: SWComboBox!
-
-    private var fullHeight: CGFloat = 0
+    private var comboBox: SWComboBox!
 
     public weak var delegate: SWComboxViewDelegate!
-
     public var tableView:UITableView!
 
     public var list: [Any] {
@@ -33,11 +32,7 @@ open class SWComboxView: NibView, UITableViewDataSource, UITableViewDelegate {
 
     public var defaultIndex = 0
 
-    public var isOpen = false {
-        didSet {
-            self.fullHeight = isOpen ? self.tableView.height + self.frame.height : self.frame.height
-        }
-    }
+    public var isOpen = false
 
     override open func commonInit() {
         let resourceType = SWComboxViewNibResourceType()
@@ -52,8 +47,11 @@ open class SWComboxView: NibView, UITableViewDataSource, UITableViewDelegate {
         tapTheCombox()
     }
 
+    //MARK: Track table view touch event
     override open func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
         if isOpen {
+            // check if the point in table view
+            let fullHeight = frame.height + tableView.height
             if point.x <= frame.width && point.y <= fullHeight && point.y > frame.height {
                 return self.tableView
             }
@@ -79,7 +77,7 @@ extension SWComboxView {
 
 }
 
-extension SWComboxView {
+extension SWComboxView: UITableViewDataSource, UITableViewDelegate {
 
     private func setupTable() {
         if tableView == nil
@@ -105,9 +103,6 @@ extension SWComboxView {
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        print("table frame is \(self.tableView.frame)\n")
-        print("table bounds is \(self.tableView.bounds)\n")
-        print("self frame is \(frame) - bounds - \(bounds)")
         let cell = getCurrentCell(tableView: self.tableView, data: list[indexPath.row] as AnyObject)
         cell.addBottomLine(margin: 0, color: UIColor.lightGray)
         return cell
@@ -153,22 +148,20 @@ extension SWComboxView {
         guard let comboBox = comboBox else { return UITableViewCell() }
         var cellFrame = comboBox.frame
         cellFrame.size.width = tableView.frame.size.width
-        let cell = tableView.dequeueReusableCell(withIdentifier: identifier) ?? UITableViewCell(style: .default, reuseIdentifier: identifier)
+
+        var cell = tableView.dequeueReusableCell(withIdentifier: identifier) ?? UITableViewCell(style: .default, reuseIdentifier: identifier)
         cell.frame = cellFrame
         let comboxC = delegate.swComboBox(combox: self)
         cell.contentView.addSubviewToMaxmiumSize(view: comboxC)
         comboxC.bind(data)
+        delegate.configureComboBoxCell(combox: self, cell: &cell)
         return cell
     }
 
     private func setupContentView() {
-        print("total count is \(list.count)")
-        if defaultIndex < list.count
-        {
+        if defaultIndex < list.count {
             self.loadCurrentView(contentView: contentView, data: list[defaultIndex] as AnyObject)
-        }
-        else
-        {
+        } else {
             self.loadCurrentView(contentView: contentView, data: list[0] as AnyObject)
         }
         self.addFrame()
@@ -179,23 +172,19 @@ extension SWComboxView {
 extension SWComboxView {
     
     //MARK: Tap Action
-    private func tapTheCombox()
-    {
+    private func tapTheCombox() {
         setupTable()
-
-//        closeSelection()
         onAndOffSelection()
 
-        self.delegate?.tapComboBox?(isOpen: !self.isOpen, combox: self)
+        self.delegate.tapComboBox(isOpen: !self.isOpen, combox: self)
     }
 
     
     //MARK: helper
-    private func dismissCombox()
-    {
+    private func dismissCombox() {
         reloadViewWithIndex(defaultIndex)
         tapTheCombox()
-        delegate?.selectedAtIndex?(index: defaultIndex, combox: self)
+        delegate.selectedAtIndex(index: defaultIndex, object: list[defaultIndex], combox: self)
     }
     
 
@@ -238,7 +227,6 @@ extension SWComboxView {
         let orginY = self.frame.size.height
         let orginX:CGFloat = 0
         let ori = CGRect(x:orginX, y:orginY, width:self.frame.size.width, height: 0)
-        print("getTableOriginFrame - \(ori)")
         return ori
     }
     
@@ -251,7 +239,6 @@ extension SWComboxView {
         if frame.origin.y + frame.size.height > fullHeight {
             frame.size.height = fullHeight - frame.origin.y
         }
-        print("getTableFrame - \(frame)")
         return frame
     }
 

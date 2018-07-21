@@ -1,7 +1,5 @@
 //
 //  SWComboxTitleView.swift
-//  AuntFood
-//
 //  Created by shouwei on 3/8/15.
 //  Copyright (c) 2015 shou. All rights reserved.
 //
@@ -14,7 +12,12 @@ struct SWComboxTitleNibResourceType: NibResourceType {
     let name = "SWComboxTextSelection"
 }
 
-open class SWComboBox: NibView {
+public protocol SWComboBoxContent {
+    func bind(_ data: Any)
+    var title: String { get}
+}
+
+open class SWComboBox: NibView, SWComboBoxContent {
     public func bind(_ data: Any) {}
     public var title: String { return "" }
 }
@@ -33,6 +36,9 @@ open class SWComboxTextSelection: SWComboBox {
         let nibType = SWComboxTitleNibResourceType()
         _ = nibType.firstView(owner: self)
         addSubviewToMaxmiumSize(view: self.container)
+
+        self.backgroundColor = UIColor.clear
+        self.container.backgroundColor = UIColor.clear
     }
 
     override open func bind(_ data: Any) {
