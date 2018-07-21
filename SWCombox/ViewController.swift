@@ -8,21 +8,19 @@
 
 import UIKit
 
-class ViewController: UIViewController, SWComboxViewDelegate {
+class ViewController: UIViewController {
 
-    @IBOutlet weak var containner1: UIView!
+    @IBOutlet weak var containner1: SWComboxView!
     
-    @IBOutlet weak var containner2: UIView!
+    @IBOutlet weak var containner2: SWComboxView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         setupCombox()
-        setupCombox2()
     }
 
     override func didReceiveMemoryWarning() {
@@ -31,47 +29,62 @@ class ViewController: UIViewController, SWComboxViewDelegate {
     }
 
     
-    func setupCombox()
-    {
-        var helper: SWComboxTitleHelper
-        helper = SWComboxTitleHelper()
-        
-        let list = ["good", "middle", "bad"]
-        var comboxView:SWComboxView
-        comboxView = SWComboxView.loadInstanceFromNibNamedToContainner(self.containner1)! as! SWComboxView
-        comboxView.bindData(data: list as NSArray, comboxHelper: helper, seletedIndex: 1, comboxDelegate: self, containnerView: self.view)
+    func setupCombox() {
+        containner1.bindData(comboxDelegate: self)
+        containner2.bindData(comboxDelegate: self)
     }
-    
-    func setupCombox2(){
-        let helper = SWComboxCountryHelper()
-        
-        let country1 = SWCountry()
-        country1.name = "China"
-        country1.image = UIImage(named: "square-CN.png")
-        
-        let country2 = SWCountry()
-        country2.name = "Japen"
-        country2.image = UIImage(named: "square-JP.png")
-        
-        let country3 = SWCountry()
-        country3.name = "America"
-        country3.image = UIImage(named: "square-US.png")
-        
-        let list = [country1, country2, country3]
-        
-        
-        
-        var comboxView:SWComboxView
-        comboxView = SWComboxView.loadInstanceFromNibNamedToContainner(self.containner2)! as! SWComboxView//(container: self.containner2)!
-        comboxView.bindData(data: list as NSArray, comboxHelper: helper, seletedIndex: 1, comboxDelegate: self, containnerView: self.view)
-    }
-    
-    
-    
-    //MARK: delegate
-    func selectedAtIndex(index:Int, combox withCombox: SWComboxView) {}
 
-    func tapComboxToOpenTable(combox: SWComboxView) {}
+}
+
+extension ViewController :SWComboxViewDelegate {
+
+    func swComboBoxSelections(combox: SWComboxView) -> [Any] {
+        if combox == containner1 {
+            return ["good", "middle", "bad"]
+        }
+        else {
+            let country1 = SWImageSelection()
+            country1.name = "China"
+            country1.image = #imageLiteral(resourceName: "square-CN.png")
+
+            let country2 = SWImageSelection()
+            country2.name = "Japen"
+            country2.image = #imageLiteral(resourceName: "square-JP.png")
+
+            let country3 = SWImageSelection()
+            country3.name = "America"
+            country3.image = #imageLiteral(resourceName: "square-US.png")
+
+            let list = [country1, country2, country3]
+            return list
+        }
+    }
+
+
+    func swComboBox(combox: SWComboxView) -> SWComboBox {
+        if combox == containner1 {
+            return SWComboxTextSelection()
+        }
+        return SWComboxImageSelection()
+    }
+
+
+    //MARK: delegate
+    func selectedAtIndex(index:Int, combox withCombox: SWComboxView) {
+
+    }
+
+    func tapComboBox(isOpen: Bool, combox: SWComboxView) {
+        if isOpen {
+            if combox == containner1 && containner2.isOpen {
+                containner2.onAndOffSelection()
+            }
+
+            if combox == containner2 && containner1.isOpen {
+                containner1.onAndOffSelection()
+            }
+        }
+    }
 
 }
 
