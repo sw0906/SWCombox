@@ -18,7 +18,7 @@ struct SWComboxCountryNibResourceType: NibResourceType {
     let name = "SWComboxImageSelection"
 }
 
-open class SWComboxImageSelection: SWComboBox {
+open class SWComboxImageSelection: SWComboxSelectionView {
     
     @IBOutlet public var container: UIView!
 

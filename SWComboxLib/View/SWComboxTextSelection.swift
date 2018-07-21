@@ -17,12 +17,12 @@ public protocol SWComboBoxContent {
     var title: String { get}
 }
 
-open class SWComboBox: NibView, SWComboBoxContent {
+open class SWComboxSelectionView: NibView, SWComboBoxContent {
     public func bind(_ data: Any) {}
     public var title: String { return "" }
 }
 
-open class SWComboxTextSelection: SWComboBox {
+open class SWComboxTextSelection: SWComboxSelectionView {
 
     @IBOutlet public var container: UIView!
 

@@ -1,12 +1,12 @@
 import UIKit
 
 public protocol SWComboxViewDelegate: class {
-    func selectedAtIndex(index:Int, object: Any, combox: SWComboxView)
-    func tapComboBox(isOpen: Bool, combox: SWComboxView)
-    func configureComboBoxCell(combox: SWComboxView, cell: inout UITableViewCell)
+    func selectComboxAtIndex(index:Int, object: Any, combox: SWComboxView)
+    func openCombox(isOpen: Bool, combox: SWComboxView)
+    func configureComboxCell(combox: SWComboxView, cell: inout UITableViewCell)
 
-    func swComboBox(combox: SWComboxView) -> SWComboBox
-    func swComboBoxSelections(combox: SWComboxView) -> [Any]
+    func comboxSeletionView(combox: SWComboxView) -> SWComboxSelectionView
+    func comboBoxSeletionItems(combox: SWComboxView) -> [Any]
 }
 
 struct SWComboxViewNibResourceType: NibResourceType {
@@ -21,13 +21,13 @@ open class SWComboxView: NibView {
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var button: UIButton!
 
-    private var comboBox: SWComboBox!
+    private var comboBox: SWComboxSelectionView!
 
     public weak var delegate: SWComboxViewDelegate!
     public var tableView:UITableView!
 
     public var list: [Any] {
-        return delegate.swComboBoxSelections(combox: self)
+        return delegate.comboBoxSeletionItems(combox: self)
     }
 
     public var defaultIndex = 0
@@ -67,7 +67,7 @@ extension SWComboxView {
     open func bindData(comboxDelegate:SWComboxViewDelegate, seletedIndex: Int) {
         defaultIndex = seletedIndex
         delegate = comboxDelegate
-        comboBox = delegate.swComboBox(combox: self)
+        comboBox = delegate.comboxSeletionView(combox: self)
         setupContentView()
     }
 
@@ -151,10 +151,10 @@ extension SWComboxView {
 
         var cell = tableView.dequeueReusableCell(withIdentifier: identifier) ?? UITableViewCell(style: .default, reuseIdentifier: identifier)
         cell.frame = cellFrame
-        let comboxC = delegate.swComboBox(combox: self)
+        let comboxC = delegate.comboxSeletionView(combox: self)
         cell.contentView.addSubviewToMaxmiumSize(view: comboxC)
         comboxC.bind(data)
-        delegate.configureComboBoxCell(combox: self, cell: &cell)
+        delegate.configureComboxCell(combox: self, cell: &cell)
         return cell
     }
 
@@ -176,7 +176,7 @@ extension SWComboxView {
         setupTable()
         onAndOffSelection()
 
-        self.delegate.tapComboBox(isOpen: !self.isOpen, combox: self)
+        self.delegate.openCombox(isOpen: !self.isOpen, combox: self)
     }
 
     
@@ -184,7 +184,7 @@ extension SWComboxView {
     private func dismissCombox() {
         reloadViewWithIndex(defaultIndex)
         tapTheCombox()
-        delegate.selectedAtIndex(index: defaultIndex, object: list[defaultIndex], combox: self)
+        delegate.selectComboxAtIndex(index: defaultIndex, object: list[defaultIndex], combox: self)
     }
     
 
