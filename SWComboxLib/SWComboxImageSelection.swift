@@ -9,8 +9,8 @@
 import UIKit
 
 open class SWImageSelection:NSObject {
-    var name:String!
-    var image:UIImage!
+    public var name:String!
+    public var image:UIImage!
 }
 
 struct SWComboxCountryNibResourceType: NibResourceType {
