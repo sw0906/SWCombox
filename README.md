@@ -1,6 +1,9 @@
 # SWCombox
 simple and clean combo box --  update to swift 4.0
 
+## Install
+pod 'SWCombox', :git => 'https://github.com/sw0906/SWCombox.git'
+
 ## Sample Code
 ```swift
 // Set up ComboBoxView
