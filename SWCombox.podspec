@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "SWCombox"
-  s.version      = "2.2"
+  s.version      = "2.3"
   s.summary      = "Simple Combo Box"
   s.description  = "Simple Combo Box - text / image & text"
   s.homepage     = "https://github.com/sw0906/SWCombox.git"
