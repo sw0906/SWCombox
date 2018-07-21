@@ -71,7 +71,7 @@ extension SWComboxView {
         setupContentView()
     }
 
-    func bindData(comboxDelegate:SWComboxViewDelegate) {
+    open func bindData(comboxDelegate:SWComboxViewDelegate) {
         bindData(comboxDelegate: comboxDelegate, seletedIndex: 0)
     }
 
