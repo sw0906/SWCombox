@@ -8,17 +8,21 @@ pod 'SWCombox', :git => 'https://github.com/sw0906/SWCombox.git'
 
 ## Sample Code
 ```swift
-// Set up ComboBoxView
-func setupComboBox() {
-     let comboBox = SWComboxView()
-     comboBox.dataSource = self
-     comboBox.delegate = self
-     comboBox.showMaxCount = 4
-     comboBox.defaultSelectedIndex = 1 //start from 0
+
+class ViewController{
+
+     // Set up ComboBoxView
+     func setupComboBox() {
+          let comboBox = SWComboxView()
+          comboBox.dataSource = self
+          comboBox.delegate = self
+          comboBox.showMaxCount = 4
+          comboBox.defaultSelectedIndex = 1 //start from 0
+     }
 }
 
 // SWComboxViewDataSourcce
-//extension ViewController: SWComboxViewDataSourcce {
+extension ViewController: SWComboxViewDataSourcce {
     func comboBoxSeletionItems(combox: SWComboxView) -> [Any] {
         return ["good", "middle", "bad"]
     }
