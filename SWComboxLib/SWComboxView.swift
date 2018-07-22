@@ -158,18 +158,6 @@ extension SWComboxView {
     }
 }
 
-public class SWComboxSelectionCell: UITableViewCell {
-    open var selectionView: SWComboxSelectionView?
-
-    open func addSelectionView(_ view: SWComboxSelectionView) {
-        self.contentView.addSubviewToMaxmiumSize(view: view)
-        selectionView = view
-    }
-    open func updateData(_ data: Any) {
-        selectionView?.bind(data)
-    }
-}
-
 extension SWComboxView {
 
     //MARK: Tap Action
