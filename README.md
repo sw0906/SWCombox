@@ -11,12 +11,14 @@ pod 'SWCombox', :git => 'https://github.com/sw0906/SWCombox.git'
 // Set up ComboBoxView
 func setupComboBox() {
      let comboBox = SWComboxView()
-     comboBox.bindData(comboxDelegate: self)
+     comboBox.dataSource = self
+     comboBox.delegate = self
+     comboBox.showMaxCount = 4
+     comboBox.defaultSelectedIndex = 1 //start from 0
 }
-    
-// SWComboxViewDelegate
-extension ViewController : SWComboxViewDelegate {
 
+// SWComboxViewDataSourcce
+//extension ViewController: SWComboxViewDataSourcce {
     func comboBoxSeletionItems(combox: SWComboxView) -> [Any] {
         return ["good", "middle", "bad"]
     }
@@ -25,12 +27,15 @@ extension ViewController : SWComboxViewDelegate {
     func comboxSeletionView(combox: SWComboxView) -> SWComboxSelectionView {
         return SWComboxTextSelection()
     }
+    
+    func configureComboxCell(combox: SWComboxView, cell: inout SWComboxSelectionCell) {}
+}
+    
+// SWComboxViewDelegate
+extension ViewController : SWComboxViewDelegate {
+    func comboxSelected(atIndex index:Int, object: Any, combox withCombox: SWComboxView) {}
 
-    func selectComboxAtIndex(index:Int, object: Any, combox withCombox: SWComboxView) { }
-
-    func openCombox(isOpen: Bool, combox: SWComboxView) {}
-
-    func configureComboxCell(combox: SWComboxView, cell: inout UITableViewCell) {}
+    func comboxOpened(isOpen: Bool, combox: SWComboxView) {}
 }
 
 ```
