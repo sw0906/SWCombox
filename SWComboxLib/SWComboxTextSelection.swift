@@ -17,10 +17,6 @@ public protocol SWComboBoxContent {
 //    var title: String { get}
 }
 
-open class SWComboxSelectionView: NibView, SWComboBoxContent {
-    public func bind(_ data: Any) {}
-}
-
 open class SWComboxTextSelection: SWComboxSelectionView {
 
     @IBOutlet public var container: UIView!

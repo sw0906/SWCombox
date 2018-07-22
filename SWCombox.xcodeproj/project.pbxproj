@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D0793CB521041871002555F0 /* SWComboxSelectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0793CB421041871002555F0 /* SWComboxSelectionCell.swift */; };
+		D0793CB721041AA0002555F0 /* SWComboxSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0793CB621041AA0002555F0 /* SWComboxSelectionView.swift */; };
 		D0CBF4CE1B789D44005E98CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CBF4CD1B789D44005E98CA /* AppDelegate.swift */; };
 		D0CBF4D31B789D44005E98CA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CBF4D21B789D44005E98CA /* ViewController.swift */; };
 		D0CBF4D61B789D44005E98CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0CBF4D41B789D44005E98CA /* Main.storyboard */; };
@@ -29,6 +30,7 @@
 
 /* Begin PBXFileReference section */
 		D0793CB421041871002555F0 /* SWComboxSelectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWComboxSelectionCell.swift; sourceTree = "<group>"; };
+		D0793CB621041AA0002555F0 /* SWComboxSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWComboxSelectionView.swift; sourceTree = "<group>"; };
 		D0CBF4C81B789D44005E98CA /* SWCombox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SWCombox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0CBF4CC1B789D44005E98CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D0CBF4CD1B789D44005E98CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 				D0FD49C321032EAF00277591 /* SWComboxView.swift */,
 				D0FD49C421032EAF00277591 /* SWComboxView.xib */,
 				D0793CB421041871002555F0 /* SWComboxSelectionCell.swift */,
+				D0793CB621041AA0002555F0 /* SWComboxSelectionView.swift */,
 				D0FD49CB21032EAF00277591 /* SWComboxImageSelection.swift */,
 				D0FD49CC21032EAF00277591 /* SWComboxImageSelection.xib */,
 				D0FD49C621032EAF00277591 /* SWComboxTextSelection.xib */,
@@ -200,6 +203,7 @@
 				D0FD49D021032EAF00277591 /* UIViewEx.swift in Sources */,
 				D0FD49D421032EAF00277591 /* SWComboxImageSelection.swift in Sources */,
 				D0CBF4CE1B789D44005E98CA /* AppDelegate.swift in Sources */,
+				D0793CB721041AA0002555F0 /* SWComboxSelectionView.swift in Sources */,
 				D0FD49CD21032EAF00277591 /* SWComboxView.swift in Sources */,
 				D0FD49D121032EAF00277591 /* SWComboxTextSelection.swift in Sources */,
 				D0793CB521041871002555F0 /* SWComboxSelectionCell.swift in Sources */,
