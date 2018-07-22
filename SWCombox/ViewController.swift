@@ -29,17 +29,21 @@ class ViewController: UIViewController {
     }
 
     func setupCombox() {
-        containner1.bindData(comboxDelegate: self)
-        containner2.bindData(comboxDelegate: self)
+        containner1.dataSource = self
+        containner1.delegate = self
+        containner1.showMaxCount = 4
+        containner1.defaultSelectedIndex = 1 //start from 0
+
+        containner2.dataSource = self
+        containner2.delegate = self
     }
 
 }
 
-extension ViewController : SWComboxViewDelegate {
-
+extension ViewController: SWComboxViewDataSourcce {
     func comboBoxSeletionItems(combox: SWComboxView) -> [Any] {
         if combox == containner1 {
-            return ["good", "middle", "bad"]
+            return ["good", "middle", "bad", "good", "middle", "bad", "good", "middle", "bad","good", "middle", "bad"]
         }
         else {
             let country1 = SWImageSelection()
@@ -59,7 +63,6 @@ extension ViewController : SWComboxViewDelegate {
         }
     }
 
-
     func comboxSeletionView(combox: SWComboxView) -> SWComboxSelectionView {
         if combox == containner1 {
             return SWComboxTextSelection()
@@ -67,13 +70,21 @@ extension ViewController : SWComboxViewDelegate {
         return SWComboxImageSelection()
     }
 
+    func configureComboxCell(combox: SWComboxView, cell: inout SWComboxSelectionCell) {
+        if combox == containner1 {
+            cell.selectionStyle = .none
+            cell.backgroundColor = UIColor.gray.withAlphaComponent(0.1)
+        }
+    }
+}
 
+extension ViewController : SWComboxViewDelegate {
     //MARK: delegate
-    func selectComboxAtIndex(index:Int, object: Any, combox withCombox: SWComboxView) {
+    func comboxSelected(atIndex index:Int, object: Any, combox withCombox: SWComboxView) {
         print("index - \(index) selected - \(object)")
     }
 
-    func openCombox(isOpen: Bool, combox: SWComboxView) {
+    func comboxOpened(isOpen: Bool, combox: SWComboxView) {
         if isOpen {
             if combox == containner1 && containner2.isOpen {
                 containner2.onAndOffSelection()
@@ -85,11 +96,6 @@ extension ViewController : SWComboxViewDelegate {
         }
     }
 
-    func configureComboxCell(combox: SWComboxView, cell: inout UITableViewCell) {
-        if combox == containner1 {
-            cell.selectionStyle = .none
-            cell.backgroundColor = UIColor.gray.withAlphaComponent(0.1)
-        }
-    }
+
 }
 
