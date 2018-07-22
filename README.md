@@ -41,9 +41,9 @@ extension ViewController : SWComboxViewDelegate {
 
     func comboxOpened(isOpen: Bool, combox: SWComboxView) {}
 }
+```
 
-
-
+```swift
 // *** You can create your Selection View, which inherit from "SWComboxSelectionView"
 open class SWComboxSelectionView: NibView, SWComboBoxContent {
     public func bind(_ data: Any) {}
