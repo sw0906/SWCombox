@@ -14,12 +14,11 @@ struct SWComboxTitleNibResourceType: NibResourceType {
 
 public protocol SWComboBoxContent {
     func bind(_ data: Any)
-    var title: String { get}
+//    var title: String { get}
 }
 
 open class SWComboxSelectionView: NibView, SWComboBoxContent {
     public func bind(_ data: Any) {}
-    public var title: String { return "" }
 }
 
 open class SWComboxTextSelection: SWComboxSelectionView {
@@ -27,10 +26,6 @@ open class SWComboxTextSelection: SWComboxSelectionView {
     @IBOutlet public var container: UIView!
 
     @IBOutlet public weak var name: UILabel!
-
-    override open var title : String {
-        return name.text ?? ""
-    }
 
     override open func commonInit() {
         let nibType = SWComboxTitleNibResourceType()

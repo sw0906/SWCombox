@@ -34,10 +34,6 @@ open class SWComboxImageSelection: SWComboxSelectionView {
         self.container.backgroundColor = UIColor.clear
     }
 
-    override open var title : String {
-        return name.text ?? ""
-    }
-
     override open func bind(_ data: Any) {
         guard let data = data as? SWImageSelection else {
             return

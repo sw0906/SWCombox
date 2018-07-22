@@ -119,10 +119,6 @@ extension SWComboxView: UITableViewDataSource, UITableViewDelegate {
 
 extension SWComboxView {
 
-    public func getCurrentTitle() -> String {
-        return comboBox?.title ?? ""
-    }
-
     func loadCurrentView(contentView:UIView, data: AnyObject) {
         contentView.addSubviewToMaxmiumSize(view: comboBox)
         comboBox.bind(data)
